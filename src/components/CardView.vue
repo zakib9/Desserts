@@ -5,9 +5,7 @@
             border-transparent " 
             :src= "`./src/assets/images/${card.image.desktop}`">
             
-            <!-- <img class="object-cover h-80 w-80 rounded-lg border-solid border-2
-            border-transparent hover:border-red-500" 
-            src="../assets/images/image-waffle-desktop.jpg"> -->
+           
             <AddToCartView/>
         </div>
        
@@ -29,6 +27,5 @@ defineProps({
     default: () => {},
   },
 });
-//console.log(card)
 </script>
 
