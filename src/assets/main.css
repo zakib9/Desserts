@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "RedHatText-Regular";
+    src: url("./fonts/static/RedHatText-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "RedHatText-Bold";
+    src: url("./fonts/static/RedHatText-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+ 

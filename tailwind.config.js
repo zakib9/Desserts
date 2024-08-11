@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "primary": "#c83b0e",
+        "secondary": "#faf6f3",
+      },
+      fontFamily: {
+        RedHatBold: ["RedHatText-Bold", "sans-serif"],
+        RedHat: ["RedHatText-Regular", "sans-serif"],
+      },
+     
+    },
   },
   plugins: [],
 }
