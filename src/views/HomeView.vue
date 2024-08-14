@@ -21,7 +21,7 @@ import cardsData from '../data.json'
       
     </div>
   </div>
-  <div class=" flex-1 bg-white min-h-60 mx-6 self-start rounded-md ">
+  <div class=" flex-1 bg-white min-h-60 mx-6 self-start rounded-xl ">
    <YourCartView/>
   </div>
  </div>
