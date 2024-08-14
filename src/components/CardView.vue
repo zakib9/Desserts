@@ -1,12 +1,17 @@
 <template>
     <div>
-        <div class="flex justify-center relative">
-            <img class="object-cover h-80 w-80 rounded-lg border-solid border-2
-            border-transparent " 
-            :src= "`./src/assets/images/${card.image.desktop}`">
+        <div  class="flex justify-center relative">
             
+            
+            <img v-if="isActive" class="object-cover h-80 w-80 rounded-lg border-solid border-2
+           border-primary"
+            :src= "`./src/assets/images/${card.image.desktop}`">
+            <img v-else class="object-cover h-80 w-80 rounded-lg border-solid border-2
+            border-transparent"
+            :src= "`./src/assets/images/${card.image.desktop}`">
+          
            
-            <AddToCartView/>
+           <AddToCartView @active="activation" @disactive="disactivation" @count="counting"/>
         </div>
        
         <div class="my-8">
@@ -18,14 +23,44 @@
 </template>
 
 <script setup>
+
+import { ref } from 'vue';
 import AddToCartView from './AddToCartView.vue';
 
+    const isActive = ref(null)
+    const counter = ref(0)
 
-defineProps({
-  card: {
-    type: Object,
-    default: () => {},
-  },
-});
+    const emit = defineEmits(["isActive","count"])
+    
+
+    function activation() {
+        isActive.value = true
+        counter.value = 1
+        emit("isActive")
+        
+    }
+    function disactivation(){
+      isActive.value = false
+    }
+    function counting(){
+      counter.value++
+    }
+
+    defineProps({
+      card: {
+        type: Object,
+        default: () => {},
+      },
+    });
+     
+    
+
+     
+   
+
+
+
+
+
 </script>
 
