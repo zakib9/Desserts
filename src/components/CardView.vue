@@ -1,17 +1,13 @@
 <template>
     <div>
         <div  class="flex justify-center relative">
-            
-            
-            <img v-if="isActive" class="object-cover h-80 w-80 rounded-lg border-solid border-2
-           border-primary"
+            <img v-if="card.isActive" class="object-cover h-80 w-80 rounded-lg border-solid border-2
+            border-primary"
             :src= "`./src/assets/images/${card.image.desktop}`">
             <img v-else class="object-cover h-80 w-80 rounded-lg border-solid border-2
             border-transparent"
             :src= "`./src/assets/images/${card.image.desktop}`">
-          
-           
-           <AddToCartView @active="activation" @disactive="disactivation" @count="counting"/>
+           <AddToCartView  :card = "card" @activation="onActivation" @decrementation="onDecrementation" @incrementation="onIncrementation"/>
         </div>
        
         <div class="my-8">
@@ -24,43 +20,34 @@
 
 <script setup>
 
-import { ref } from 'vue';
 import AddToCartView from './AddToCartView.vue';
 
-    const isActive = ref(null)
-    const counter = ref(0)
 
-    const emit = defineEmits(["isActive","count"])
-    
-
-    function activation() {
-        isActive.value = true
-        counter.value = 1
-        emit("isActive")
-        
+    const emit = defineEmits([
+          "activation",
+          "incrementation",
+          "decrementation"
+        ])
+    // functionality emitation to home vue
+    function onActivation(){
+      emit("activation")
     }
-    function disactivation(){
-      isActive.value = false
+    function onIncrementation(){
+      emit("incrementation")
     }
-    function counting(){
-      counter.value++
+    function onDecrementation(){
+      emit("decrementation")
+     
     }
+   
 
     defineProps({
       card: {
         type: Object,
         default: () => {},
       },
+     
     });
-     
-    
-
-     
-   
-
-
-
-
 
 </script>
 
