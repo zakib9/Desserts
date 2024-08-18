@@ -1,17 +1,13 @@
 <template>
     <div>
         <div  class="flex justify-center relative">
-            
-            
-            <img v-if="isActive && itemName !== card.name" class="object-cover h-80 w-80 rounded-lg border-solid border-2
-           border-primary"
+            <img v-if="card.isActive" class="object-cover h-80 w-80 rounded-lg border-solid border-2
+            border-primary"
             :src= "`./src/assets/images/${card.image.desktop}`">
             <img v-else class="object-cover h-80 w-80 rounded-lg border-solid border-2
             border-transparent"
             :src= "`./src/assets/images/${card.image.desktop}`">
-          
-           
-           <AddToCartView @active="activation" @disactive="disactivation" @count="increment" @decrement="decrement" :card = "card" :active="active" :itemName="itemName" :cont="contity"/>
+           <AddToCartView  :card = "card" @activation="onActivation" @decrementation="onDecrementation" @incrementation="onIncrementation"/>
         </div>
        
         <div class="my-8">
@@ -24,58 +20,34 @@
 
 <script setup>
 
-import { ref } from 'vue';
 import AddToCartView from './AddToCartView.vue';
 
-    const isActive = ref(null)
 
-    const emit = defineEmits(["isActive","count","dec"])
-    
-
-    function activation() {
-        isActive.value = true
-        emit("isActive")
-        
+    const emit = defineEmits([
+          "activation",
+          "incrementation",
+          "decrementation"
+        ])
+    // functionality emitation to home vue
+    function onActivation(){
+      emit("activation")
     }
-    function disactivation(){
-      isActive.value = false
-      emit("dec")
+    function onIncrementation(){
+      emit("incrementation")
     }
-    function increment(){
-      
-      emit("count")
+    function onDecrementation(){
+      emit("decrementation")
+     
     }
-    function decrement(){
-      emit("dec")
-    }
+   
 
     defineProps({
       card: {
         type: Object,
         default: () => {},
       },
-      active: {
-        type: Boolean,
-        default: null,
-      },
-      itemName: {
-        type: String,
-        default: "",
-      },
-      contity: {
-        type: Number,
-        default: "",
-      },
+     
     });
-     
-    
-
-     
-   
-
-
-
-
 
 </script>
 
