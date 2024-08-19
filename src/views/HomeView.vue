@@ -77,7 +77,16 @@ let cardsNumber = ref(0)
         } 
       }
     }
-
+    function onCloseModal(){
+      for (let index = 0; index < items.value.length; index++){
+        if (items.value[index].isActive === true){
+          items.value[index].contity = 0
+          items.value[index].isActive = false  
+          total.value = 0
+          cardsNumber.value = 0
+        }
+      }
+    }
 
 
 
@@ -89,13 +98,22 @@ let cardsNumber = ref(0)
   <div class=" grid grid-cols-3 gap-6">
     <h1 class="text-black text-4xl font-RedHatBold mb-6 col-span-3">Desserts</h1>
     <div  v-for="card in items" :key="card.name">
-      <CardView :card = "card" @activation="onActivation(card)" @decrementation="onDecrementation(card)" @incrementation="onIncrementation(card)"/>
+      <CardView 
+      :card = "card" 
+      @activation="onActivation(card)" 
+      @decrementation="onDecrementation(card)" 
+      @incrementation="onIncrementation(card)"/>
       
       
     </div>
   </div>
   <div class=" flex-1 bg-white min-h-60 mx-6 self-start rounded-xl ">
-   <YourCartView  :card = "items" :total = "total" @remove="onRemove" :cardsNumber="cardsNumber"/>
+   <YourCartView  
+    :card = "items"
+    :total = "total" 
+    @remove="onRemove"
+    @closeModal="onCloseModal" 
+    :cardsNumber="cardsNumber"/>
   </div>
  </div>
 </template>

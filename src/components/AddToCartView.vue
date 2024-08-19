@@ -15,10 +15,20 @@
      absolute cursor-pointer group-hover:border-2
       group-hover:border-primary justify-between items-center">
       
-        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2"  viewBox="0 0 10 10" class="w-6 h-6 border border-solid border-white rounded-full p-1 fill-white hover:bg-white hover:fill-primary"
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="10" 
+        height="2"  
+        viewBox="0 0 10 10" 
+        class="w-6 h-6 border border-solid border-white rounded-full p-1 fill-white hover:bg-white hover:fill-primary"
          @click="incrementation"><path  d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>
         <p class="font-bold text-lg text-white px-12">{{ card.contity }}</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2"  viewBox="0 0 10 2" class="w-6 h-6 border border-solid border-white rounded-full p-1  fill-white hover:bg-white hover:fill-primary"
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="10" 
+        height="2"  
+        viewBox="0 0 10 2" 
+        class="w-6 h-6 border border-solid border-white rounded-full p-1  fill-white hover:bg-white hover:fill-primary"
         @click="decrementation"><path  d="M0 .375h10v1.25H0V.375Z" /></svg>
     </div>
 </template>
