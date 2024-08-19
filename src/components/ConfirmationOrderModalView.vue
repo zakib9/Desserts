@@ -1,10 +1,10 @@
 <template>
      <Teleport to="body">
       
-          <div v-show="modalActive" class="absolute w-full bg-black bg-opacity-30 h-screen
-          top-0 left-0 flex justify-center  ">
+          <div v-show="modalActive" class="absolute w-full bg-black bg-opacity-30 h-full
+          top-0 left-0 flex justify-center">
             
-                <div v-if="modalActive" class="p-8 bg-white self-center mt-32 max-w-screen-md rounded-lg flex flex-col justify-center">
+                <div v-if="modalActive" class="p-8 bg-white m-auto max-w-screen-md rounded-lg flex flex-col justify-center">
                     <svg 
                     width="48" 
                     height="48" 
