@@ -6,7 +6,7 @@
             :src= "./src/assets/images/${card.image.desktop}`">
             <img v-else class="object-cover h-80 w-80 rounded-lg border-solid border-2
             border-transparent"
-            :src= "./src/assets/images/${card.image.desktop}`">
+            :src= "`./src/assets/images/${card.image.desktop}`">
            <AddToCartView  :card = "card" @activation="onActivation" @decrementation="onDecrementation" @incrementation="onIncrementation"/>
         </div>
        
