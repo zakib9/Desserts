@@ -54,4 +54,3 @@ import baklavaImage from "../assets/images/image-macaron-desktop.jpg"
     });
 
 </script>
-
