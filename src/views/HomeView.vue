@@ -6,6 +6,29 @@ import cardsData from '../data.json'
 import { ref } from 'vue';
 
 
+import waffleImage from '@/assets/images/image-waffle-desktop.jpg'
+import vanillaImage from '@/assets/images/image-creme-brulee-desktop.jpg'
+import macaronImage from '@/assets/images/image-macaron-desktop.jpg'
+import tiramisuImage from '@/assets/images/image-tiramisu-desktop.jpg'
+import baklavaImage from '@/assets/images/image-baklava-desktop.jpg'
+import meringueImage from '@/assets/images/image-meringue-desktop.jpg'
+import velvetImage from '@/assets/images/image-cake-desktop.jpg'
+import brownieImage from '@/assets/images/image-brownie-desktop.jpg'
+import pannaImage from '@/assets/images/image-panna-cotta-desktop.jpg'
+
+const images = ref([
+{ src: waffleImage },
+{ src: vanillaImage },
+{ src: macaronImage },
+{ src: tiramisuImage },
+{ src: baklavaImage },
+{ src: meringueImage },
+{ src: velvetImage },
+{ src: brownieImage },
+{ src: pannaImage },
+])
+
+
 const items = ref([])
 let total = ref(0)
 let cardsNumber = ref(0)
@@ -16,7 +39,7 @@ let confirmationOrderPopUp = ref(null)
   function cardsDataModification(cards){
     for (let index = 0; index < cards.length; index++) {
       items.value.push({
-            "image": cards[index].image,
+            "image": images.value[index].src,
             "name": cards[index].name,
             "category": cards[index].category,
             "price": cards[index].price,
@@ -111,6 +134,7 @@ let confirmationOrderPopUp = ref(null)
       >
     <h1 class="text-black text-4xl font-RedHatBold mb-6 col-span-3">Desserts</h1>
     <div class="flex justify-center" v-for="card in items" :key="card.name">
+
       <CardView 
       :card = "card" 
       @activation="onActivation(card)" 
@@ -120,7 +144,8 @@ let confirmationOrderPopUp = ref(null)
   </div>
   <div class=" 
     col-span-1
-    bg-white xl:ml-6 
+    bg-white 
+    xl:ml-6 
     self-start 
     rounded-xl 
     ">

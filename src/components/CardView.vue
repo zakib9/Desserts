@@ -1,13 +1,14 @@
 <template>
   <div>
-      <div  class="flex justify-center relative">
-          <img v-if="card.isActive" class="object-cover h-80 w-80 rounded-lg border-solid border-2
-          border-primary"
-          :src= "`./src/assets/images/${card.image.desktop}`">
-          <img v-else class="object-cover h-80 w-80 rounded-lg border-solid border-2
-          border-transparent"
-          :src= "`./src/assets/images/${card.image.desktop}`">
-         <AddToCartView  :card = "card" @activation="onActivation" @decrementation="onDecrementation" @incrementation="onIncrementation"/>
+      <div class="flex justify-center relative">
+              <img v-if="card.isActive" class="object-cover h-80 w-80 rounded-lg border-solid border-2
+              border-primary"
+              :src= "require(card.image)">
+              <img v-else class="object-cover h-80 w-80 rounded-lg border-solid border-2
+              border-transparent"
+              :src= "require(card.image)">
+                       <AddToCartView  :card = "card" @activation="onActivation" @decrementation="onDecrementation" @incrementation="onIncrementation"/>
+
       </div>
      
       <div class="my-8">
@@ -16,11 +17,17 @@
           <h3 class="text-primary text-lg font-RedHatBold">${{card.price}}</h3>
       </div>
   </div>
+
 </template>
 
 <script setup>
 
+
+
 import AddToCartView from './AddToCartView.vue';
+
+
+
 
 
   const emit = defineEmits([
