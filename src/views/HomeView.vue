@@ -5,6 +5,7 @@ import ConfirmationOrderModalView from '@/components/ConfirmationOrderModalView.
 import cardsData from '../data.json'
 import { ref } from 'vue';
 
+
 import waffleImage from '@/assets/images/image-waffle-desktop.jpg'
 import vanillaImage from '@/assets/images/image-creme-brulee-desktop.jpg'
 import macaronImage from '@/assets/images/image-macaron-desktop.jpg'
@@ -124,14 +125,11 @@ let confirmationOrderPopUp = ref(null)
       bg-secondary 
       px-20 py-20 
       xl:grid-cols-4
-      
       ">
   <div class="
       col-span-1
       xl:col-span-3
       lg:grid
-    
-      
       "
       >
     <h1 class="text-black text-4xl font-RedHatBold mb-6 col-span-3">Desserts</h1>
@@ -145,7 +143,8 @@ let confirmationOrderPopUp = ref(null)
   </div>
   <div class=" 
     col-span-1
-    bg-white md:ml-6 
+    bg-white 
+    xl:ml-6  
     self-start 
     rounded-xl 
     ">
