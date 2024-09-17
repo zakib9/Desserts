@@ -5,6 +5,28 @@ import ConfirmationOrderModalView from '@/components/ConfirmationOrderModalView.
 import cardsData from '../data.json'
 import { ref } from 'vue';
 
+import waffleImage from '@/assets/images/image-waffle-desktop.jpg'
+import vanillaImage from '@/assets/images/image-creme-brulee-desktop.jpg'
+import macaronImage from '@/assets/images/image-macaron-desktop.jpg'
+import tiramisuImage from '@/assets/images/image-tiramisu-desktop.jpg'
+import baklavaImage from '@/assets/images/image-baklava-desktop.jpg'
+import meringueImage from '@/assets/images/image-meringue-desktop.jpg'
+import velvetImage from '@/assets/images/image-cake-desktop.jpg'
+import brownieImage from '@/assets/images/image-brownie-desktop.jpg'
+import pannaImage from '@/assets/images/image-panna-cotta-desktop.jpg'
+
+const images = ref([
+{ src: waffleImage },
+{ src: vanillaImage },
+{ src: macaronImage },
+{ src: tiramisuImage },
+{ src: baklavaImage },
+{ src: meringueImage },
+{ src: velvetImage },
+{ src: brownieImage },
+{ src: pannaImage },
+])
+
 
 const items = ref([])
 let total = ref(0)
@@ -16,7 +38,7 @@ let confirmationOrderPopUp = ref(null)
   function cardsDataModification(cards){
     for (let index = 0; index < cards.length; index++) {
       items.value.push({
-            "image": cards[index].image,
+            "image": images.value[index].src,
             "name": cards[index].name,
             "category": cards[index].category,
             "price": cards[index].price,
@@ -97,22 +119,23 @@ let confirmationOrderPopUp = ref(null)
 <template>
  <div class="
       grid 
-      grid-cols-2
+      grid-cols-1
       grid-flow-row
       bg-secondary 
       px-20 py-20 
-      xl:grid-cols-3
-      md:grid-cols-2
-      sm:grid-cols-1">
+      xl:grid-cols-4
+      
+      ">
   <div class="
       col-span-1
-      xl:col-span-2
-      xl:grid
+      xl:col-span-3
+      lg:grid
+    
       
       "
       >
     <h1 class="text-black text-4xl font-RedHatBold mb-6 col-span-3">Desserts</h1>
-    <div class="flex justify-start" v-for="card in items" :key="card.name">
+    <div class="flex items-center justify-center" v-for="card in items" :key="card.name">
       <CardView 
       :card = "card" 
       @activation="onActivation(card)" 
@@ -122,7 +145,7 @@ let confirmationOrderPopUp = ref(null)
   </div>
   <div class=" 
     col-span-1
-    bg-white mx-6 
+    bg-white md:ml-6 
     self-start 
     rounded-xl 
     ">
