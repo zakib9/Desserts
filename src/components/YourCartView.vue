@@ -5,7 +5,7 @@
             </h2>
         <div v-if="cardsNumber == 0" class="text-center mb-6">
             <img  src="../assets/images/illustration-empty-cart.svg"
-            alt="" class="m-auto h-60">
+            alt="" class="m-auto">
             <span class="text-s font-RedHatBold text-accent">Your added items will apear here</span>
 
         </div>

@@ -5,8 +5,7 @@ import ConfirmationOrderModalView from '@/components/ConfirmationOrderModalView.
 import cardsData from '../data.json'
 import { ref } from 'vue';
 
-<<<<<<< Updated upstream
-=======
+
 import waffleImage from '@/assets/images/image-waffle-desktop.jpg'
 import vanillaImage from '@/assets/images/image-creme-brulee-desktop.jpg'
 import macaronImage from '@/assets/images/image-macaron-desktop.jpg'
@@ -28,7 +27,7 @@ const images = ref([
 { src: brownieImage },
 { src: pannaImage },
 ])
->>>>>>> Stashed changes
+
 
 const items = ref([])
 let total = ref(0)
@@ -121,27 +120,16 @@ let confirmationOrderPopUp = ref(null)
 <template>
  <div class="
       grid 
-      grid-cols-2
+      grid-cols-1
       grid-flow-row
       bg-secondary 
       px-20 py-20 
-<<<<<<< Updated upstream
-      xl:grid-cols-3
-      md:grid-cols-2
-      sm:grid-cols-1">
-  <div class="
-      col-span-1
-      xl:col-span-2
-      xl:grid
-      
-=======
       xl:grid-cols-4
       ">
   <div class="
       col-span-1
       xl:col-span-3
       lg:grid
->>>>>>> Stashed changes
       "
       >
     <h1 class="text-black text-4xl font-RedHatBold mb-6 col-span-3">Desserts</h1>
@@ -155,7 +143,7 @@ let confirmationOrderPopUp = ref(null)
   </div>
   <div class=" 
     col-span-1
-    bg-white mx-6 
+    bg-white xl:ml-6  
     self-start 
     rounded-xl 
     ">
