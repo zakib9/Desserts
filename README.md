@@ -17,7 +17,7 @@ This is a solution to the Product list with cart challenge on Frontend Mentor. F
 [ Challenge link ](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d)
 
 
-[ Live application ](https://zakisdesserts.netlify.app)
+[ Live application ](https://zaki-desserts-challenge.netlify.app)
 
 # Built With
 
