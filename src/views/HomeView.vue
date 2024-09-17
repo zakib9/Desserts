@@ -5,6 +5,30 @@ import ConfirmationOrderModalView from '@/components/ConfirmationOrderModalView.
 import cardsData from '../data.json'
 import { ref } from 'vue';
 
+<<<<<<< Updated upstream
+=======
+import waffleImage from '@/assets/images/image-waffle-desktop.jpg'
+import vanillaImage from '@/assets/images/image-creme-brulee-desktop.jpg'
+import macaronImage from '@/assets/images/image-macaron-desktop.jpg'
+import tiramisuImage from '@/assets/images/image-tiramisu-desktop.jpg'
+import baklavaImage from '@/assets/images/image-baklava-desktop.jpg'
+import meringueImage from '@/assets/images/image-meringue-desktop.jpg'
+import velvetImage from '@/assets/images/image-cake-desktop.jpg'
+import brownieImage from '@/assets/images/image-brownie-desktop.jpg'
+import pannaImage from '@/assets/images/image-panna-cotta-desktop.jpg'
+
+const images = ref([
+{ src: waffleImage },
+{ src: vanillaImage },
+{ src: macaronImage },
+{ src: tiramisuImage },
+{ src: baklavaImage },
+{ src: meringueImage },
+{ src: velvetImage },
+{ src: brownieImage },
+{ src: pannaImage },
+])
+>>>>>>> Stashed changes
 
 const items = ref([])
 let total = ref(0)
@@ -101,6 +125,7 @@ let confirmationOrderPopUp = ref(null)
       grid-flow-row
       bg-secondary 
       px-20 py-20 
+<<<<<<< Updated upstream
       xl:grid-cols-3
       md:grid-cols-2
       sm:grid-cols-1">
@@ -109,6 +134,14 @@ let confirmationOrderPopUp = ref(null)
       xl:col-span-2
       xl:grid
       
+=======
+      xl:grid-cols-4
+      ">
+  <div class="
+      col-span-1
+      xl:col-span-3
+      lg:grid
+>>>>>>> Stashed changes
       "
       >
     <h1 class="text-black text-4xl font-RedHatBold mb-6 col-span-3">Desserts</h1>
