@@ -97,22 +97,20 @@ let confirmationOrderPopUp = ref(null)
 <template>
  <div class="
       grid 
-      grid-cols-2
+      grid-cols-1
       grid-flow-row
       bg-secondary 
       px-20 py-20 
-      xl:grid-cols-3
-      md:grid-cols-2
-      sm:grid-cols-1">
+      xl:grid-cols-4
+      ">
   <div class="
       col-span-1
-      xl:col-span-2
-      xl:grid
-      
+      xl:col-span-3
+      lg:grid
       "
       >
     <h1 class="text-black text-4xl font-RedHatBold mb-6 col-span-3">Desserts</h1>
-    <div class="flex justify-start" v-for="card in items" :key="card.name">
+    <div class="flex justify-center" v-for="card in items" :key="card.name">
       <CardView 
       :card = "card" 
       @activation="onActivation(card)" 
@@ -122,7 +120,7 @@ let confirmationOrderPopUp = ref(null)
   </div>
   <div class=" 
     col-span-1
-    bg-white mx-6 
+    bg-white xl:ml-6 
     self-start 
     rounded-xl 
     ">
