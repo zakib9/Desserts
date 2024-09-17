@@ -39,7 +39,7 @@ let confirmationOrderPopUp = ref(null)
   function cardsDataModification(cards){
     for (let index = 0; index < cards.length; index++) {
       items.value.push({
-            "image": cards[index].image,
+            "image": images.value[index].src,
             "name": cards[index].name,
             "category": cards[index].category,
             "price": cards[index].price,
