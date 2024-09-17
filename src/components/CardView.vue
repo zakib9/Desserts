@@ -7,7 +7,11 @@
               <img v-else class="object-cover h-80 w-80 rounded-lg border-solid border-2
               border-transparent"
               :src= "card.image">
-                       <AddToCartView  :card = "card" @activation="onActivation" @decrementation="onDecrementation" @incrementation="onIncrementation"/>
+          <AddToCartView  
+          :card = "card" 
+          @activation="onActivation" 
+          @decrementation="onDecrementation"
+          @incrementation="onIncrementation"/>
 
       </div>
      
