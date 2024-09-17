@@ -22,7 +22,7 @@
                                 <div class="flex">
                                     <div>
                                         <img  class="object-cover h-12 w-12 rounded-lg mr-2"
-                                        :src= "require(item.image)">
+                                        :src= "`./src/assets/images/${item.image.thumbnail}`">
                                     </div>
                                     <div class="flex flex-col" >
                                         <p class="font-RedHatBold">{{ item.name }}</p>
