@@ -133,7 +133,8 @@ let confirmationOrderPopUp = ref(null)
       "
       >
     <h1 class="text-black text-4xl font-RedHatBold mb-6 col-span-3">Desserts</h1>
-    <div class="flex items-center justify-center" v-for="card in items" :key="card.name">
+    <div class="flex justify-center" v-for="card in items" :key="card.name">
+
       <CardView 
       :card = "card" 
       @activation="onActivation(card)" 
@@ -144,7 +145,7 @@ let confirmationOrderPopUp = ref(null)
   <div class=" 
     col-span-1
     bg-white 
-    xl:ml-6  
+    xl:ml-6 
     self-start 
     rounded-xl 
     ">
